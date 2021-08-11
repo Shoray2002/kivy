@@ -1,0 +1,118 @@
+
+WidgetExample:
+<WidgetExample>:
+    cols:3
+    
+    ToggleButton:
+        text:'text'
+        on_state: root.on_toggle_btn()
+    Button:
+        text:'SUB'
+        on_press:root.on_btn_click_sub()
+        font_name: 'Fonts\Orbitron-ExtraBold.ttf'
+    Label:
+        text:root.my_text
+        font_name: 'Fonts\Orbitron-ExtraBold.ttf'
+        font_size:"60dp"
+        color:1, .949, 0, 1
+        
+    Button:
+        text: 'SUB' 
+        on_press:root.on_btn_click_add()
+        font_name: 'Fonts\Orbitron-ExtraBold.ttf'
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# # BoxLayoutEx:
+# <BoxLayoutEx>:
+#     orientation:'horizontal'
+#     spacing: '10dp'
+#     Button:
+#         text:"A"        
+#     Button:
+#         text:"B"        
+#     BoxLayout:
+#         orientation:'vertical'
+#         spacing: '5dp'
+#         Button:
+#             text:"C"
+#         Button:
+#             text:'D'
+#         Button:
+#             text:'E'
+
+# # AnchorLayoutEx:
+# <AnchorLayout>:
+#     anchor_x: 'left'
+#     BoxLayout:
+#         size_hint: .2,.2
+#         orientation:'vertical'
+#         Button:
+#             text:"A"
+            
+#             size_hint: .10,.10
+#         Button:
+#             text:"B"
+#             # anchor_x: 'center'
+#             size_hint: .10,.10
+
+# # GridLayoutEx:
+# <GridLayout>:
+#     cols: 2
+
+#     Button:
+#         text:"A"
+#         size_hint: .2,None
+#         height: '48dp'
+#     Button:
+#         text:"B"
+#         size_hint: .2,None
+#         height: '48dp'
+#     BoxLayoutEx:
+
+#     Button:
+#         text:"D"
+#         size_hint: .2,.2
+#     Button:
+#         text:"E"
+#     Button:
+#         text:"F"
+
+# # StackLayoutEx:
+# <StackLayout>:
+#     orientation:'lr-bt'
+#     # padding: ('25dp', '25dp', '25dp', '25dp')
+
+# #ScrollViewEx:
+# <ScrollViewEx@ScrollView>:
+#     StackLayoutEx:
+#         size_hint:1,None
+#         height: self.minimum_height
+
+# <PageLayEx@PageLayout>:
+#     StackLayoutEx:
+#     BoxLayoutEx:
+#     AnchorLayoutEx:
+#     GridLayoutEx:
+    
+# # PageLayEx:
+
+
+    
