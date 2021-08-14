@@ -9,7 +9,7 @@ from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.metrics import dp 
 from kivy.uix.pagelayout import PageLayout 
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty,BooleanProperty
 
 
 class StackLayoutEx(StackLayout):
@@ -26,16 +26,30 @@ class StackLayoutEx(StackLayout):
 class WidgetExample(GridLayout):
     my_text = StringProperty('Hello')
     i=0
-    def on_btn_click_add(self):
-        print('clicked '+str(self.i))
-        self.i+=1
-        self.my_text=str(self.i)
+    count_enabled=BooleanProperty(False)
+
+    def on_btn_click_add(self,adder):
+        # print('clicked '+str(self.i))
+        if self.count_enabled:
+            self.i+=1
+            # adder.text='+'+str(self.i)
+            self.my_text=str(self.i)
+        
+            print(adder.state)
     def on_btn_click_sub(self):
         print('clicked '+str(self.i))
         self.i-=1
         self.my_text=str(self.i)
-    def on_toggle_btn(self):
-        print('toggle')
+   
+
+    def on_toggle_btn(self,toggle):
+        print('toggle '+ toggle.state)
+        if toggle.state=='down':
+            toggle.text='ON'
+            self.count_enabled=True
+        else:
+            toggle.text='OFF'
+            self.count_enabled=False
     
 
 # class BoxLayoutEx(BoxLayout):
