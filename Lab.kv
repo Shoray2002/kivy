@@ -1,18 +1,18 @@
 
 WidgetExample:
 <WidgetExample>:
-    cols:4
+    cols:3
     
     ToggleButton:
         text:'text'
         on_state: root.on_toggle_btn(self)
         size_hint: None, 1
         width:"100dp"
-    Button:
-        text:'SUB'
-        on_press:root.on_btn_click_sub()
-        font_name: 'Fonts\Orbitron-ExtraBold.ttf'
-        disabled: not root.count_enabled
+    # Button:
+    #     text:'SUB'
+    #     on_press:root.on_btn_click_sub()
+    #     font_name: 'Fonts\Orbitron-ExtraBold.ttf'
+    #     disabled: not root.count_enabled
     Label:
         text:root.my_text
         font_name: 'Fonts\Orbitron-ExtraBold.ttf'
@@ -25,6 +25,48 @@ WidgetExample:
         on_press:root.on_btn_click_add(self)
         font_name: 'Fonts\Orbitron-ExtraBold.ttf'
         disabled:not root.count_enabled
+    Switch:
+        size_hint: None, 1
+        width:"100dp"
+        on_active: root.on_switch_active(self)
+    BoxLayout:
+        orientation:'vertical'
+        ProgressBar:
+            id:progress_bar
+            max:100
+            value:root.slider_value_num
+        Label:
+            text:root.slider_value_txt
+            font_name: 'Fonts\Orbitron-ExtraBold.ttf'
+            font_size:"60dp"
+            color:0.24,0.65,1,1
+    Slider:
+        step:1
+        orientation:'horizontal'
+        size_hint: 1,1
+        height:"100dp"
+        min:0
+        max:100
+        
+        # padding: "10dp"
+        value_track:True
+        value_track_color:[1, 0, 0, 1]
+        value_track_width:2
+        value:55
+        on_value:root.on_slider_value(self)
+        disabled:not root.switch_enabled
+    
+    TextInput:
+        id:text_input
+        size_hint: None,1
+        width:"100dp"
+    Label:
+        text:text_input.text
+        font_name: 'Fonts\Orbitron-ExtraBold.ttf'
+        font_size:"60dp"
+        size_hint: 1,2
+        color:0.24,0.65,1,1
+        
     
 
 
