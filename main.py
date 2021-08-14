@@ -30,6 +30,7 @@ class WidgetExample(GridLayout):
     count_enabled=BooleanProperty(False)
     switch_enabled=BooleanProperty(False)
     slider_value_num=NumericProperty(0)
+    text_to_validate=StringProperty("")
     # input_text=StringProperty('Input\n Value')
     
 
@@ -63,7 +64,9 @@ class WidgetExample(GridLayout):
     #     if self.switch_enabled==True:
     #         self.slider_value_txt=str(int(slider_ex.value))
     #         self.slider_value_num=int(slider_ex.value)
-    
+    def on_text_input_validate(self,validator):
+        self.text_to_validate=validator.text
+
 
 
     

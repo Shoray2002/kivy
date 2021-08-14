@@ -54,15 +54,17 @@ WidgetExample:
         value_track_color:[1, 0, 0, 1]
         value_track_width:2
         value:55
-        on_value:root.on_slider_value(self)
+        # on_value:root.on_slider_value(self)
         disabled:not root.switch_enabled
     
     TextInput:
         id:text_input
         size_hint: None,1
         width:"100dp"
+        multiline:False
+        on_text_validate:root.on_text_input_validate(self)
     Label:
-        text:text_input.text
+        text:root.text_to_validate
         font_name: 'Fonts\Orbitron-ExtraBold.ttf'
         font_size:"60dp"
         size_hint: 1,2
