@@ -34,13 +34,14 @@ WidgetExample:
         ProgressBar:
             id:progress_bar
             max:100
-            value:root.slider_value_num
+            value:slider.value
         Label:
-            text:root.slider_value_txt
+            text:str(int(slider.value))
             font_name: 'Fonts\Orbitron-ExtraBold.ttf'
             font_size:"60dp"
             color:0.24,0.65,1,1
     Slider:
+        id:slider
         step:1
         orientation:'horizontal'
         size_hint: 1,1

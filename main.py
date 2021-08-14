@@ -30,7 +30,7 @@ class WidgetExample(GridLayout):
     count_enabled=BooleanProperty(False)
     switch_enabled=BooleanProperty(False)
     slider_value_num=NumericProperty(0)
-    input_text=StringProperty('Input\n Value')
+    # input_text=StringProperty('Input\n Value')
     
 
     def on_btn_click_add(self,adder):
@@ -59,10 +59,10 @@ class WidgetExample(GridLayout):
             self.switch_enabled=True
         else:
             self.switch_enabled=False
-    def on_slider_value(self,slider_ex):
-        if self.switch_enabled==True:
-            self.slider_value_txt=str(int(slider_ex.value))
-            self.slider_value_num=int(slider_ex.value)
+    # def on_slider_value(self,slider_ex):
+    #     if self.switch_enabled==True:
+    #         self.slider_value_txt=str(int(slider_ex.value))
+    #         self.slider_value_num=int(slider_ex.value)
     
 
 
