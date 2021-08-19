@@ -1,7 +1,39 @@
 
-ImageEx:
+CanvasExample3:
+# : set s dp(200)
 
-<ImageEx@GridLayout>
+<CanvasExample3>:
+
+
+
+
+<CanvasExample2>:
+    Button:
+        pos:100,100
+        size:dp(100),dp(100)
+        text:'Button'
+        on_press: root.on_click()
+<CanvasExample1>:
+    canvas:
+        Color:
+            rgba: 1, 1, 1, 1
+        # Rectangle:
+        #     pos:self.center_x-s/2,self.center_y-s/2
+        #     size:s,s
+        #     source: './images/4.jpg'
+        # Ellipse:
+        #     pos:self.center_x-s/2,self.center_y-s/2
+        #     size:s,s/3
+        Line
+            points:(self.center_x,0,self.center_x,self.height)
+            width:5
+        Line:
+            points:(0,self.center_y,self.width,self.center_y)
+            width:5
+            circle:(self.center_x,self.center_y,s/2)    
+
+
+<ImageEx@GridLayout>:
     cols:3
     Image:  
         source: 'Images/2.jpg'

@@ -10,6 +10,8 @@ from kivy.uix.button import Button
 from kivy.metrics import dp 
 from kivy.uix.pagelayout import PageLayout 
 from kivy.properties import StringProperty,BooleanProperty,NumericProperty
+from kivy.graphics.vertex_instructions import Line,Rectangle,Ellipse
+from kivy.graphics.context_instructions import Color
 
 
 class StackLayoutEx(StackLayout):
@@ -19,9 +21,6 @@ class StackLayoutEx(StackLayout):
             b=Button(text=str(i),size_hint=(None,None),size=(dp(100),dp(100)))
             self.add_widget(b)
    
-
-# class GridLayoutEx(GridLayout):
-#     pass
 
 class WidgetExample(GridLayout):
     my_text = StringProperty('Hello')
@@ -70,6 +69,50 @@ class WidgetExample(GridLayout):
 
 
     
+class CanvasExample1(Widget):
+    pass
+
+class CanvasExample2(Widget):
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+        with self.canvas:
+            # Color(1,0,0,1)
+            Line(points=[0,0,100,100,200,0],width=5)
+            self.rect=Rectangle(pos=(0,0),size=(100,100),source="./Images/4.png")
+            Color(0,1,0,1)
+            Line(rectangle=(100,100,100,100),width=5,)
+
+    def on_click(self):
+        # print('clicked')
+        x,y=self.rect.pos
+        x+=dp(10)
+        y=y+dp(10)
+        if x>self.width-dp(100) or y>self.height-dp(100):
+            x=0
+            y=0
+        self.rect.pos=(x,y)
+
+class CanvasExample3(Widget):
+    def __init__(self,**kwargs):
+        super().__init__(**kwargs)
+        self.ball_size=dp(50)
+        with self.canvas:
+            self.ball=Ellipse(pos=self.center,size=(self.ball_size,self.ball_size))
+    def on_size(self,*args):
+        print("on size: "+str(self.width)+" , "+str(self.height))
+        self.ball.pos=(self.center_x-self.ball_size/2,self.center_y-self.ball_size/2)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # class BoxLayoutEx(BoxLayout):
 #     pass
