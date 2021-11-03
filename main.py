@@ -20,8 +20,8 @@ class StackLayoutEx(StackLayout):
             self.add_widget(b)
    
 
-# class GridLayoutEx(GridLayout):
-#     pass
+class Ball(Widget):
+    pass
 
 class WidgetExample(GridLayout):
     my_text = StringProperty('Hello')
@@ -70,14 +70,6 @@ class WidgetExample(GridLayout):
 
 
     
-
-# class BoxLayoutEx(BoxLayout):
-#     pass
-# class AnchorLayoutEx(AnchorLayout):
-#     pass
-
-# class CustomWidget(Widget):
-#     pass
 
 class Lab(App):
     pass
